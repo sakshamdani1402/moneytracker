@@ -29,7 +29,7 @@ router.post('/register', [
                 email : user.email,
                 password : user.password
             });
-            res.json({message : "success", newUser});
+            res.json({success : true, newUser});
             //const data = {newUser : newUser.id};
             //const authToken = jwt.sign(data,JWT_SECRET);
             //res.json({message : "success", authToken});
@@ -78,8 +78,8 @@ router.post('/login', [
         }
         // sign auth token with data(user id) and the JWT_SECRET
         const authToken = jwt.sign(data,JWT_SECRET);
-        success = true;
-        res.json({success, authToken});
+        //success = true;
+        res.json({success : true, authToken});
     } catch (error) {
         console.log(err);
         res.status(500).send("Internal server error");
