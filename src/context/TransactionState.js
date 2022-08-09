@@ -3,7 +3,7 @@ import TransactionContext from "./TransactionContext";
 
 function TransactionState(props) {
     //const TransactionContext = createContext();
-    const host = "http://localhost:5000";
+    const host = "https://trackspense-backend.herokuapp.com/";
     const initTransactions = []
     const [transactions, setTransactions] = useState(initTransactions);
 
