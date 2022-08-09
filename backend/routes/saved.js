@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const SavedTransaction = require('../models/SavedTransaction');
 const fetchuser = require("../middleware/fetchuser");
-const { json } = require('express');
+// const { json } = require('express');
 
 //ROUTE 1 : GET ALL SAVED TRANSACTIONS "/saved/getall"
 
@@ -22,9 +22,11 @@ router.post('/add', fetchuser, async function (req, res) {
     try {
         const {name, income, expense} = req.body;
         const userId = req.user;
+        // console.log(userId);
         const savedState = new SavedTransaction({
             name, income, expense, user : userId
         });
+      
         const newSave = await savedState.save();
         res.json(newSave);
     } catch (error) {

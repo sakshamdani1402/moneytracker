@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Urbanist:wght@100;400&display=swap');
+
+:root{
+  --blue : #00ADB5;
+  --dark-grey : #393E46;
+  --dark-bg : #222831;
+  --white : #e6e6e6;
+  --income : #59CE8F;
+  --expense : #FF1E00 ;
+}
+body{
+  background-color: var(--dark-bg);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -31,15 +46,84 @@
 
 .login-page , .signup-page{
   height: 70%;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 2%;
   padding: 5%;
   border-radius: 50px;
-  background: #ffffff;
-  box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px #ffffff;
+  background: linear-gradient(145deg, #1f242c, #242b34);
+  box-shadow:  15px 15px 30px #1e242c,
+             -15px -15px 30px #262c36;
 }
-
+.input{
+  background-color: var(--dark-bg);
+  box-shadow: inset 11px 11px 26px #30353c,
+  inset -11px -11px 26px #424751;
+            border: none;
+            color: white;
+}
 .login-image *,.signup-img *{
+  margin: 0;
   height: 100%;
-  width: 75%;
+  width: 90%;
 }
 
+.blue{
+  background-color: var(--blue);
+  color: white;
+}
+
+.dark-bg{
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+.dark-grey-bg{
+  background-color: var(--dark-grey);
+  color: white;
+  width: 95%;
+}
+.transactions, .add-form{
+  background: linear-gradient(145deg, #1f242c, #242b34);
+  box-shadow:  8px 8px 16px #1f242c,
+             -8px -8px 16px #252c36;
+  padding: 5%;
+  border-radius: 30px;
+}
+.popup{
+  border-radius: 15px;
+  background: linear-gradient(145deg, #1e2125, #23282c);
+  box-shadow:  14px 14px 28px #1f2327,
+               -14px -14px 28px #23272b;
+}
+.add-form-btns *{
+  width: 30%;
+  margin: 0 6%;
+}
+.income{
+  color: var(--income);
+}
+.income-bg{
+  background-color: var(--income);
+}
+.expense{
+  color: var(--expense);
+}
+.expense-bg{
+  background-color: var(--expense);
+}
+.trash{
+  color: var(--dark-bg);
+  transition: all 150ms ;
+}
+.trash:hover{
+  color: var(--expense);
+}
+
+.saved-tag{
+  background: linear-gradient(145deg, #1f242c, #242b34);
+  border-radius: 10px;
+}
+.date{
+  font-size: x-small;
+}

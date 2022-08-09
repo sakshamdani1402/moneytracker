@@ -12,7 +12,7 @@ function SaveState(props) {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'authToken': localStorage.getItem('token')
             }
         });
         const json = await response.json();
@@ -21,15 +21,15 @@ function SaveState(props) {
     }
 
     //SAVE A TRANSACTION
-    const saveTransaction = async (name, income, expense, time) => {
+    const saveTransaction = async (name, income, expense) => {
         
         const response = await fetch(`${host}/saved/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'authToken': localStorage.getItem('token')
             },
-            body: JSON.stringify({ name, income, expense, time})
+            body: JSON.stringify({ name, income, expense})
         });
 
         
@@ -43,7 +43,7 @@ function SaveState(props) {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
+                'authToken': localStorage.getItem('token')
             }
         });
         //const json = response.json();

@@ -16,20 +16,20 @@ const appNavbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" href="#">Home</Link>
+                            <Link className={`nav-link ${location.pathname==='/'?"active": ""}`} aria-current="page" href="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" href="#">Saved</Link>
+                            <Link className={`nav-link ${location.pathname==='/saved'?"active": ""}`} href="/saved">Saved</Link>
                         </li>
                     </ul>
                     {
                         !localStorage.getItem("token") ?
                         <div className="d-flex ms-auto justify-content-end">
-                          <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
-                          <Link className="btn btn-primary mx-2" to="/register" role="button">SignUp</Link>
+                          <Link className="btn blue mx-2" to="/login" role="button">Login</Link>
+                          <Link className="btn blue mx-2" to="/register" role="button">SignUp</Link>
                         </div> :
                         <div className="d-flex ms-auto justify-content-end">
-                          <div onClick={handleLogout} className="btn btn-primary mx-4">Logout</div>
+                          <div onClick={handleLogout} className="btn blue mx-4">Logout</div>
                         </div>
                             
                     }

@@ -52,8 +52,20 @@ function TransactionState(props) {
         setTransactions(newTransaction);
     }
 
+    //CLEAR TRANSACTIONS
+    const clear = async () =>{
+        await fetch(`${host}/transactions/clear`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'authToken': localStorage.getItem('token')
+            }
+        });
+        setTransactions([]);
+    }
+
     return (
-        <TransactionContext.Provider value={{ transactions, getAll, addTransaction, deleteTransaction }}>
+        <TransactionContext.Provider value={{ transactions, getAll,clear, addTransaction, deleteTransaction }}>
             {props.children}
         </TransactionContext.Provider>
     )

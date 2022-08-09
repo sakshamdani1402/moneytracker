@@ -54,4 +54,15 @@ router.delete('/delete/:id', fetchuser, async function (req, res) {
         res.status(500).send("Internal server error");
     }
 })
+
+//ROUTE 4 : CLEAR ALL TRANSACTION '/transactions/clear'
+router.delete('/clear', fetchuser, async function (req, res) {
+    try{
+        const userId = req.user;
+        await Transaction.deleteMany({user : userId});
+        res.send("All deleted successfully");
+    }catch(err){
+        res.status(500).send("Internal server error");
+    }
+})
 module.exports = router
