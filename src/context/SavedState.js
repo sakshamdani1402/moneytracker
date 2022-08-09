@@ -39,7 +39,7 @@ function SaveState(props) {
 
     //DELETE A  SAVED TRANSACTION
     const deleteSavedTransaction = async (id) => {
-        const response = await fetch(`${host}/saved/delete/${id}`, {
+        await fetch(`${host}/saved/delete/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
